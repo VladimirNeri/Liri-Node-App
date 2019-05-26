@@ -13,7 +13,7 @@ var userInput = "";
 var text = "";
 var action = process.argv[2];
 
-//Get user input for song/artist/movie name from process.argv[3]
+//Get user input for song/artist/movie name from process.argv[3].  Activity 18. 
 for (var i = 3; i < nodeArgs.length; i++) {
     //If userInput is more than 1 word
     if (i > 3 && i < nodeArgs.length) {
@@ -23,11 +23,6 @@ for (var i = 3; i < nodeArgs.length; i++) {
     else {
         userInput += nodeArgs[i];
     }
-}
-
-//User Input
-for (var i = 3; i < nodeArgs.length; i++) {
-    text = userInput;
 }
 
 function runLiri() {
@@ -54,7 +49,7 @@ function runLiri() {
     function bandsInTown(){
 
             //Append userInput to log.txt. Activity 14.
-                fs.appendFile("log.txt", text + "\n----------------\n", function (error) {
+                fs.appendFile("log.txt", userInput + "\n----------------\n", function (error) {
                     if (error) {
                     console.log(error);
                     };
@@ -175,7 +170,7 @@ function runLiri() {
         }
 
         function getRandom() {
-            //Read random.txt file
+            //Read random.txt file. Activity 12
             fs.readFile("random.txt", "utf8", function (error, data) {
                 if (error) {
                 return console.log(error)
