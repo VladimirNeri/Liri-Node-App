@@ -41,7 +41,7 @@ This is a call from an internal random.txt package that Spotify will run.  In th
 If no search criteria is provided, the Spotify search defaults to the popular 90s hit "The Sign" by Ace of Base. 
 
 <p>
-    <img src="https://github.com/obscura101/Liri-Node-App/blob/master/Images/default-to.png" width="1000"/>
+    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/default-to.png"/>
   
 </p>
 
