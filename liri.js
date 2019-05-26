@@ -87,7 +87,7 @@ function runLiri() {
     }
         
     function spotSong() {
-        //If statement for no song provided
+        //If no song provided search "The Sign"
             if (!userInput) {
                 userInput = "the sign ace of base";
                 text = userInput;
