@@ -38,7 +38,7 @@ This is a call from an internal random.txt package that Spotify will run.  In th
 </p>
 
 # default-to
-If no search criteria is provided, the Spotify search defaults to the popular 90s hit "The Sign" by Ace of Bass. 
+If no search criteria is provided, the Spotify search defaults to the popular 90s hit "The Sign" by Ace of Base. 
 
 <p>
     <img src="https://github.com/obscura101/Liri-Node-App/blob/master/Images/default-to.png" width="1000"/>
