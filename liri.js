@@ -133,7 +133,7 @@ function runLiri() {
         };
 
         function movieInfo() {
-             //If statement for no movie provided
+             //If no movie provided search "Mr. Nobody"
              if (!userInput) {
                 userInput = "Mr. Nobody";
                 text = userInput;
@@ -146,7 +146,7 @@ function runLiri() {
                 };
             });
             //Run request to OMDB
-            var queryURL = "https://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=2433905a";
+            var queryURL = "https://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy";
 
             axios.get(queryURL).then(
                 function(response) {
