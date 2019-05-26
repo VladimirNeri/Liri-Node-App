@@ -13,12 +13,13 @@ var spotify = new Spotify(keys.spotify);
 var nodeArgs = process.argv;
 var userInput = "";
 var text = "";
+var action = process.argv[2];
 
 //Get user input for song/artist/movie name from process.argv[3]
 for (var i = 3; i < nodeArgs.length; i++) {
     //If userInput is more than 1 word
     if (i > 3 && i < nodeArgs.length) {
-        userInput = userInput + "%20" + nodeArgs[i];
+        userInput = userInput + nodeArgs[i];
     }
     //If userInput is only 1 word
     else {
@@ -26,19 +27,34 @@ for (var i = 3; i < nodeArgs.length; i++) {
     }
 }
 
-//Remove %20 when pushing to log.txt
+//User Input
 for (var i = 3; i < nodeArgs.length; i++) {
-    text = userInput.replace(/%20/g, " ");
+    text = userInput;
 }
-
-var action = process.argv[2];
-
 
 function runLiri() {
     //Switch-case will direct which function gets run. Activity 15. 
     switch (action) {
-        
         case "concert-this":
+            bandsInTown();                   
+            break;                          
+          
+        case 'spotify-this-song':
+            spotSong();
+            break;
+          
+        case 'movie-this':
+            movieInfo();
+            break;
+          
+        case 'do-what-it-says':
+            getRandom();
+            break;  
+        }
+    };
+
+    function bandsInTown(){
+
             //Append userInput to log.txt. Activity 14.
                 fs.appendFile("log.txt", text + "\n----------------\n", function (error) {
                     if (error) {
@@ -46,7 +62,7 @@ function runLiri() {
                     };
                 });
             
-        //Run request to bandsintown with the specified artist
+            //Run request to bandsintown with the specified artist
             var queryURL = "https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp";
 
                 axios.get(queryURL)
@@ -69,14 +85,14 @@ function runLiri() {
                     if (error.response) {
                         //console.log("Error");
                     }
-                })
-        break;
+                });
+    }
         
-        case "spotify-this-song":
+    function spotSong() {
         //If statement for no song provided
             if (!userInput) {
-                userInput = "The%20Sign";
-                text = userInput.replace(/%20/g, " ");
+                userInput = "the sign ace of base";
+                text = userInput;
             }
             //Append userInput to log.txt
             fs.appendFile("log.txt", text + "\n----------------\n", function (error) {
@@ -115,15 +131,15 @@ function runLiri() {
                         });
                     }
                 }
-            })
+            });
 
-        break;
+    }
             
-        case "movie-this":
+        function movieInfo() {
              //If statement for no movie provided
              if (!userInput) {
-                userInput = "Mr%20Nobody";
-                text = userInput.replace(/%20/g, " ");
+                userInput = "Mr. Nobody";
+                text = userInput;
             }
 
             //Append userInput to log.txt. Activity 14. 
@@ -160,26 +176,22 @@ function runLiri() {
                         console.log("Error");
                     }
                 });
-                
-            break;
-    }
-}
-
-if (action == "do-what-it-says") {
-    var fs = require("fs");
-    //Read random.txt file
-    fs.readFile("random.txt", "utf8", function (error, data) {
-        if (error) {
-            return console.log(error)
         }
-        //Split data into array
-        var textArr = data.split(",");
-        action = textArr[0];
-        userInput = textArr[1];
-        text = userInput.replace(/%20/g, " ");
-        runLiri();
-    })
-}
-        
 
+        function getRandom() {
+            
+            //Read random.txt file
+            fs.readFile("random.txt", "utf8", function (error, data) {
+                if (error) {
+                return console.log(error)
+            }
+            //Split data into array
+            var textArr = data.split(",");
+            action = textArr[0];
+            userInput = textArr[1];
+            text = userInput;
+            runLiri();
+                })
+            }
+        
 runLiri();
