@@ -7,8 +7,6 @@ var moment = require("moment");
         moment().format();
 var fs = require("fs");
 var axios = require("axios");
-
-//Save spotify key to a variable
 var spotify = new Spotify(keys.spotify);
 var nodeArgs = process.argv;
 var userInput = "";
@@ -104,37 +102,36 @@ function runLiri() {
             // From Node-Spotify-API
             spotify.search({
                 type: "track",
-                query: userInput
-            }, function (err, data) {
-                if (err) {
-                    console.log("Error occured: " + err)
-                }
-                
-                var info = data.tracks.items
-                for (var i = 0; i < info.length; i++) {
-                    var albumObject = info[i].album;
-                    var trackName = info[i].name
-                    var preview = info[i].preview_url
-                    var artistsInfo = albumObject.artists
-                    for (var j = 0; j < artistsInfo.length; j++) {
-                        console.log("Artist: " + artistsInfo[j].name)
-                        console.log("Song Name: " + trackName)
-                        console.log("Preview of Song: " + preview)
-                        console.log("Album Name: " + albumObject.name)
-                        console.log("----------------")
-                       
-                        fs.appendFile("log.txt", "Artist: " + artistsInfo[j].name + "\nSong Name: " + trackName + "\nPreview of Song: " + preview + "\nAlbum Name: " 
-                            + albumObject.name + "\n----------------\n", function (error) {
-                            if (error) {
-                                console.log(error);
-                            };
-                        });
+                query: userInput})
+                .then(function(data) {
+                    // console.log(data);
+                    var info = data.tracks.items
+                    for (var i = 0; i < info.length; i++) {
+                        var albumObject = info[i].album;
+                        var trackName = info[i].name
+                        var preview = info[i].preview_url
+                        var artistsInfo = albumObject.artists
+                        for (var j = 0; j < artistsInfo.length; j++) {
+                            console.log("Artist: " + artistsInfo[j].name)
+                            console.log("Song Name: " + trackName)
+                            console.log("Preview of Song: " + preview)
+                            console.log("Album Name: " + albumObject.name)
+                            console.log("----------------")
+                           
+                            fs.appendFile("log.txt", "Artist: " + artistsInfo[j].name + "\nSong Name: " + trackName + "\nPreview of Song: " + preview + "\nAlbum Name: " 
+                                + albumObject.name + "\n----------------\n", function (error) {
+                                if (error) {
+                                    console.log(error);
+                                };
+                            });
+                        } 
                     }
-                }
+            }) 
+            .catch(function(err) {
+                console.log(err);
             });
+        };
 
-    }
-            
         function movieInfo() {
              //If statement for no movie provided
              if (!userInput) {
@@ -179,7 +176,6 @@ function runLiri() {
         }
 
         function getRandom() {
-            
             //Read random.txt file
             fs.readFile("random.txt", "utf8", function (error, data) {
                 if (error) {
@@ -195,3 +191,5 @@ function runLiri() {
             }
         
 runLiri();
+
+        
