@@ -112,11 +112,11 @@ function runLiri() {
                         var preview = info[i].preview_url
                         var artistsInfo = albumObject.artists
                         for (var j = 0; j < artistsInfo.length; j++) {
-                            console.log("Artist: " + artistsInfo[j].name)
-                            console.log("Song Name: " + trackName)
-                            console.log("Preview of Song: " + preview)
-                            console.log("Album Name: " + albumObject.name)
-                            console.log("----------------")
+                            console.log("Artist: " + artistsInfo[j].name);
+                            console.log("Song Name: " + trackName);
+                            console.log("Preview of Song: " + preview);
+                            console.log("Album Name: " + albumObject.name);
+                            console.log("----------------");
                            
                             fs.appendFile("log.txt", "Artist: " + artistsInfo[j].name + "\nSong Name: " + trackName + "\nPreview of Song: " + preview + "\nAlbum Name: " 
                                 + albumObject.name + "\n----------------\n", function (error) {
@@ -150,16 +150,15 @@ function runLiri() {
 
             axios.get(queryURL).then(
                 function(response) {
-                    console.log("Title: " + response.data.Title)
-                    console.log("Release Year: " + response.data.Year)
-                    console.log("IMDB Rating: " + response.data.Ratings[0].Value)
-                    console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value)
-                    console.log("Country: " + response.data.Country)
-                    console.log("Language: " + response.data.Language)
-                    console.log("Plot: " + response.data.Plot)
-                    console.log("Actors: " + response.data.Actors)
+                    console.log("Title: " + response.data.Title);
+                    console.log("Release Year: " + response.data.Year);
+                    console.log("IMDB Rating: " + response.data.Ratings[0].Value);
+                    console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+                    console.log("Country: " + response.data.Country);
+                    console.log("Language: " + response.data.Language);
+                    console.log("Plot: " + response.data.Plot);
+                    console.log("Actors: " + response.data.Actors);
                     
-                  
                     fs.appendFile("log.txt", "Title: " + response.data.Title + "\nRelease Year: " + response.data.Year + "\nIMDB Rating: " + response.data.Ratings[0].Value + "\nRotten Tomatoes Rating: " +
                     response.data.Ratings[1].Value + "\nCountry: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors + "\n----------------\n",
                         function(error) {
