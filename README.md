@@ -7,7 +7,7 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 1. LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
 2. Data is retrieved by using the `axios` package to the Bands in Town, Spotify and OMDB APIs. 
 3. Liri will display the current Concert Dates, Song Information and Movie Details from said APIs.  
-3. To make this work Liri takes in the following commands (see samples below):: 
+3. To make this work Liri takes in the following commands (see samples below): 
 
 # concert-this
 
@@ -35,6 +35,7 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 </p>
 
 # default-to
+    If no search criteria is provided, the Spotify search defaults to the popular 90s hit "The Sign" by Ace of Bass. 
 
 <p>
     <img src="https://github.com/obscura101/Liri-Node-App/blob/master/Images/default-to.png" width="1000"/>
