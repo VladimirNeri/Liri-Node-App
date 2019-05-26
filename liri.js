@@ -103,9 +103,9 @@ function runLiri() {
             spotify.search({
                 type: "track",
                 query: userInput})
-                .then(function(data) {
-                    // console.log(data);
-                    var info = data.tracks.items
+                .then(function(response) {
+                    // console.log(response);
+                    var info = response.tracks.items
                     for (var i = 0; i < info.length; i++) {
                         var albumObject = info[i].album;
                         var trackName = info[i].name
