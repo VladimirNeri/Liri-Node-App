@@ -71,13 +71,13 @@ function runLiri() {
                         fs.appendFileSync("log.txt", "Venue: " + response.data[i].venue.name + "\nLocation: " + response.data[i].venue.city + ", " + 
                                         response.data[i].venue.country + "\nDate: " + date + "\n----------------\n", function (error) {
                             if (error) {
-                                //console.log(error);
+                                console.log(error);
                             }});
                         }
                 })
                 .catch(function(error) {
                     if (error.response) {
-                        //console.log("Error");
+                        console.log("Error");
                     }
                 });
     }
