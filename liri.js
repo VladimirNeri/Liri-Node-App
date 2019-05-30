@@ -85,7 +85,7 @@ function runLiri() {
     function spotSong() {
         //If no song provided search "The Sign"
             if (!userInput) {
-                userInput = "the sign ace of base";
+                userInput = "The Sign Ace of Base";
                 text = userInput;
             }
             //Append userInput to log.txt
