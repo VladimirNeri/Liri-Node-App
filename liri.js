@@ -89,7 +89,7 @@ function runLiri() {
                 text = userInput;
             }
             //Append userInput to log.txt
-            fs.appendFile("log.txt", text + "\n----------------\n", function (error) {
+            fs.appendFile("log.txt", userInput + "\n----------------\n", function (error) {
                 if (error) {
                     console.log(error);
                 };
@@ -136,7 +136,7 @@ function runLiri() {
             }
 
             //Append userInput to log.txt. Activity 14. 
-            fs.appendFile("log.txt", text + "\n----------------\n", function (error) {
+            fs.appendFile("log.txt", userInput + "\n----------------\n", function (error) {
                 if (error) {
                     console.log(error);
                 };
