@@ -60,11 +60,11 @@ function runLiri() {
 
                 axios.get(queryURL)
                 .then(function(response) {
-                    // console.log(response)
-                    for (var i = 0; i < response.length; i++);
+                    //console.log(response.data)
+                    for (var i = 0; i < response.data.length; i++) {
                         console.log("Venue: " + response.data[i].venue.name);
                         console.log("Location: " + response.data[i].venue.city + ", " + response.data[i].venue.country);
-        
+                    
                     var date = response.data[i].datetime;
                     date = moment(date).format("MM/DD/YYYY");
                         console.log("Date: " + date)
@@ -73,6 +73,7 @@ function runLiri() {
                             if (error) {
                                 //console.log(error);
                             }});
+                        }
                 })
                 .catch(function(error) {
                     if (error.response) {
