@@ -10,28 +10,28 @@ LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and R
 # concert-this
 Upcoming concerts by band.
 <p>
-    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/Concert-This.mov" width="1000"/>
+    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/Concert-This.png" width="1000"/>
   
 </p>
 
 # spotify-this-song
 Choose a song and Spotify will search it. 
 <p>
-    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/spotify-this-song.mov" width="1000"/>
+    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/spotify-this-song.png" width="1000"/>
   
 </p>
 
 # movie-this
 Retrieve movie information from the OMDB API.  
 <p>
-    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/Movie-this.mov" width="1000"/>
+    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/Movie-this.png" width="1000"/>
   
 </p>
 
 # do-what-it-says
 This is a call from an internal random.txt package that Spotify will run.  In this example Spotify will search "I want it That Way."
 <p>
-    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/do-what-it-says.mov" width="1000"/>
+    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/do-what-it-says.png" width="1000"/>
   
 </p>
 
@@ -39,15 +39,8 @@ This is a call from an internal random.txt package that Spotify will run.  In th
 If no search criteria is provided, the Spotify search defaults to the popular 90s hit "The Sign" by Ace of Base. 
 
 <p>
-    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/default-to.mov" width="1000"/>
+    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/default-to.png"/>
   
 </p>
 
-# Mr. Nobody
-  If no movie criteria is provided, the OMDB API will search Mr. Nobody.  
-
-  <p>
-    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/mr.nobody.mov" width="1000"/>
-  
-</p>
 
