@@ -43,4 +43,13 @@ If no search criteria is provided, the Spotify search defaults to the popular 90
   
 </p>
 
+# Mr. Nobody
+
+If no movie search criteria is provided, OMBD search defaults to Mr. Nobody.  
+
+<p>
+    <img src="https://raw.githubusercontent.com/obscura101/Liri-Node-App/master/Images/mr.nobody.png"/>
+  
+</p>
+
 
